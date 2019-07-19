@@ -7,14 +7,20 @@
       <span class="iconfont search-icon">&#xe632;</span>输入城市/游玩/主题
     </div>
     <div class="header_right">
-      城市
+      {{this.city}}
       <span class="iconfont arrow-icon">&#xe60a;</span>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'HomeHeader',
+  // 接受父组件的传值,并验证
+  props: {
+    city: String
+  }
+};
 </script>
 
 <!-- 
