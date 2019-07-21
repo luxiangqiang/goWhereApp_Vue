@@ -4,12 +4,14 @@
       <span class="iconfont">&#xe624;</span>
     </div>
     <div class="header_center">
-      <span class="iconfont search-icon">&#xe632;</span>输入城市/游玩/主题
+        <span class="iconfont search-icon">&#xe632;</span>输入城市/游玩/主题
     </div>
-    <div class="header_right">
-      {{this.city}}
-      <span class="iconfont arrow-icon">&#xe60a;</span>
-    </div>
+    <router-link :to="{name:'City'}">
+      <div class="header_right">
+        {{this.city}}
+        <span class="iconfont arrow-icon">&#xe60a;</span>
+      </div>
+    </router-link>
   </header>
 </template>
 
@@ -19,6 +21,9 @@ export default {
   // 接受父组件的传值,并验证
   props: {
     city: String
+  },
+  methods: {
+
   }
 };
 </script>
