@@ -1,109 +1,114 @@
 <template>  
-   <div class="list">
-       <div class="area">
-          <div class="title border-topbottom">当前城市</div>
-          <div class="btn-list">
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-          </div>
-       </div>
-  
-       <div class="area">
-            <div class="title">热门城市</div>
-            <div class="btn-list">
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-              <div class="btn-wrap">
-                <div class="btn">北京</div>
-              </div>
-          </div>
-         
-       </div>
-       <div class="area">
-           <div class="title">A</div>
-           <ul class="item-list">
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-           </ul>
-       </div>
+   <div class="list" ref="wrapper">
+        <div>
+            <div class="area">
+                <div class="title border-topbottom">当前城市</div>
+                <div class="btn-list">
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="area">
+                    <div class="title">热门城市</div>
+                    <div class="btn-list">
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                    <div class="btn-wrap">
+                        <div class="btn">北京</div>
+                    </div>
+                </div>
+            </div>
+            <div class="area">
+                <div class="title">A</div>
+                <ul class="item-list">
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                </ul>
+            </div>
 
-        <div class="area">
-           <div class="title">A</div>
-           <ul class="item-list">
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-           </ul>
-       </div>
+                <div class="area">
+                <div class="title">A</div>
+                <ul class="item-list">
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                </ul>
+            </div>
 
-        <div class="area">
-           <div class="title">A</div>
-           <ul class="item-list">
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-           </ul>
-       </div>
+                <div class="area">
+                <div class="title">A</div>
+                <ul class="item-list">
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                </ul>
+            </div>
 
-        <div class="area">
-           <div class="title">A</div>
-           <ul class="item-list">
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-               <li>阿拉尔</li>
-           </ul>
-       </div>
+                <div class="area">
+                <div class="title">A</div>
+                <ul class="item-list">
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                    <li>阿拉尔</li>
+                </ul>
+            </div>
+        </div>
    </div>
 </template>
 
 
 <script>
+import Bscroll from 'better-scroll'
 export default {
-    name: 'CityList'
+    name: 'CityList',
+    // 页面挂载完毕后使用
+    mounted () {
+        this.scroll = new Bscroll(this.$refs.wrapper)
+    }
 }
 </script>
 
 
-<style>
-
+<style scoped>
     .list{
         overflow: hidden;
         position: absolute;
