@@ -13,82 +13,15 @@
             <div class="area">
                     <div class="title">热门城市</div>
                     <div class="btn-list">
-                    <div class="btn-wrap">
-                        <div class="btn">北京</div>
-                    </div>
-                    <div class="btn-wrap">
-                        <div class="btn">北京</div>
-                    </div>
-                    <div class="btn-wrap">
-                        <div class="btn">北京</div>
-                    </div>
-                    <div class="btn-wrap">
-                        <div class="btn">北京</div>
-                    </div>
-                    <div class="btn-wrap">
-                        <div class="btn">北京</div>
-                    </div>
-                    <div class="btn-wrap">
-                        <div class="btn">北京</div>
-                    </div>
-                    <div class="btn-wrap">
-                        <div class="btn">北京</div>
+                    <div class="btn-wrap" v-for="item of host" :key="item.id">
+                        <div class="btn">{{item.city}}</div>
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="title">A</div>
-                <ul class="item-list">
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                </ul>
-            </div>
-
-                <div class="area">
-                <div class="title">A</div>
-                <ul class="item-list">
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                </ul>
-            </div>
-
-                <div class="area">
-                <div class="title">A</div>
-                <ul class="item-list">
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                </ul>
-            </div>
-
-                <div class="area">
-                <div class="title">A</div>
-                <ul class="item-list">
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
+            <div class="area" v-for="(item, key) of allCities" :key="key">
+                <div class="title">{{key}}</div>
+                <ul class="item-list" v-for="innerItem of item" :key="innerItem.id">
+                    <li>{{innerItem.city}}</li>
                 </ul>
             </div>
         </div>
@@ -100,6 +33,10 @@
 import Bscroll from 'better-scroll'
 export default {
     name: 'CityList',
+    props:{
+        host: Array,
+        allCities: Object,
+    },
     // 页面挂载完毕后使用
     mounted () {
         this.scroll = new Bscroll(this.$refs.wrapper)

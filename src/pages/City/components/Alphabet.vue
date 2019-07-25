@@ -1,22 +1,19 @@
 <template>  
-   <ul class="Alist">
-       <li>A</li>
-       <li>B</li>
-       <li>B</li>
-       <li>B</li>
-       <li>B</li>
-       <li>B</li>
-       <li>B</li>
-       <li>B</li>
-       <li>B</li>
-   </ul>
+    <div>
+        <ul class="Alist">
+            <li v-for="(item, key) of alphabet" :key="key">
+                {{key}}
+            </li>
+        </ul>
+    </div>
 </template>
-
 
 <script>
 export default {
     name: 'CityAlphabet',
-    
+    props: {
+        alphabet: Object
+    }
 }
 </script>
 
@@ -34,7 +31,7 @@ export default {
     }
 
     li{
-        line-height: .44rem;
+        line-height: .35rem;
         text-align: center;
         color: #00bcd4;
     }
