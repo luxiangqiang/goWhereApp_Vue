@@ -18,7 +18,12 @@
                     </div>
                 </div>
             </div>
-            <div class="area" v-for="(item, key) of allCities" :key="key">
+            <div 
+                class="area" 
+                v-for="(item, key) of allCities" 
+                :key="key"
+                :ref="key"
+            >
                 <div class="title">{{key}}</div>
                 <ul class="item-list" v-for="innerItem of item" :key="innerItem.id">
                     <li>{{innerItem.city}}</li>
@@ -36,10 +41,21 @@ export default {
     props:{
         host: Array,
         allCities: Object,
+        letter: String
     },
     // 页面挂载完毕后使用
     mounted () {
         this.scroll = new Bscroll(this.$refs.wrapper)
+    },
+    // 监听器
+    watch: {
+        letter() {
+           if(this.letter){
+               const ele = this.$refs[this.letter][0]
+            //    console.log(ele)]
+               this.scroll.scrollToElement(ele)
+           }
+        }
     }
 }
 </script>

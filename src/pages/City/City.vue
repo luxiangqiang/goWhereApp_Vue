@@ -2,8 +2,15 @@
     <div>
         <CityHead></CityHead>
         <CitySearch></CitySearch>
-        <CityList :host="hostCities" :allCities="allCities"></CityList>
-        <City-alphabet :alphabet="alphabet"></City-alphabet>
+        <CityList 
+        :host="hostCities" 
+        :allCities="allCities"
+        :letter="letter"
+        ></CityList>
+        <City-alphabet
+         :alphabet="alphabet"
+         @change="handleLetterChange"
+         ></City-alphabet>
     </div>
 </template>
 
@@ -19,6 +26,7 @@ export default {
         return {
             hostCities:[],
             allCities:{},
+            letter:'',
             alphabet:{
                 "A": 1,
                 "B": 2,
@@ -67,6 +75,9 @@ export default {
             console.log(res.data.data.hotCities)
             this.hostCities = res.data.data.hotCities;
             this.allCities = res.data.data.allCities;
+        },
+        handleLetterChange (letter) {
+            this.letter = letter;
         }
     }
 }
