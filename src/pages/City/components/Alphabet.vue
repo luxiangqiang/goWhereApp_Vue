@@ -19,13 +19,19 @@
 <script>
 export default {
     name: 'CityAlphabet',
-    data () {
-        return {
-            touchStatus: false
-        }
-    },
     props: {
         alphabet: Object
+    },
+    data () {
+        return {
+            touchStatus: false,
+            startY: 0,
+            timer: null
+        }
+    },
+    updated () {
+        // this.startY = this.$refs['A'][0].offsetTop
+        // console.log(this.startY)
     },
     computed: {
         letters() {
@@ -44,13 +50,20 @@ export default {
             this.touchStatus = true;
         },
         handleTouchMove(e) {
+            console.log('move')
             if(this.touchStatus){
-                const startY = this.$refs['A'][0].offsetTop
-                const touchY = e.touches[0].clientY - 79
-                const index = Math.floor((touchY - startY) / 20)
-                if(index >= 0 && index < this.letters.length){
-                    this.$emit('change', this.letters[index])
+                // 函数滚动节流
+                if(this.timer){
+                    clearTimeout(this.timer)
                 }
+                this.timer = setTimeout(()=>{
+                    const touchY = e.touches[0].clientY - 79
+                    const startY = this.$refs['A'][0].offsetTop
+                    const index = Math.floor((touchY - startY) / 20)
+                    if(index >= 0 && index < this.letters.length){
+                        this.$emit('change', this.letters[index])
+                    }
+                },16)
             }
         },
         handleTouchEnd() {
@@ -59,7 +72,6 @@ export default {
     }
 }
 </script>
-
 
 <style scoped>
     .Alist{
