@@ -5,7 +5,7 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="btn-list">
                     <div class="btn-wrap">
-                        <div class="btn">北京</div>
+                        <div class="btn">{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
@@ -13,7 +13,11 @@
             <div class="area">
                     <div class="title">热门城市</div>
                     <div class="btn-list">
-                    <div class="btn-wrap" v-for="item of host" :key="item.id">
+                    <div class="btn-wrap"
+                     v-for="item of host" 
+                     :key="item.id"
+                     @click="handleCityClick(item.city)"
+                     >
                         <div class="btn">{{item.city}}</div>
                     </div>
                 </div>
@@ -42,6 +46,12 @@ export default {
         host: Array,
         allCities: Object,
         letter: String
+    },
+    methods: {
+        handleCityClick (cityName) {
+            this.$store.dispatch('changeCity',cityName)
+            this.$router.push('/')
+        }
     },
     // 页面挂载完毕后使用
     mounted () {
