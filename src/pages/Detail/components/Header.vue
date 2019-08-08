@@ -3,11 +3,11 @@
         <router-link tag="div" to="/" class="header-abs">
             <span class="iconfont">&#xe624;</span>
         </router-link>
-        <div 
-        class="header-fixed"
-        v-show="showAbs"
-        :style="opacityStyle"
-        >
+        <div
+            class="header-fixed"
+            v-show="showAbs"
+            :style="opacityStyle"
+            >
             <router-link to="/">
                 <span class="iconfont header-fixed-back">&#xe624;</span>
             </router-link>
@@ -29,8 +29,8 @@ export default {
     },
     methods: {
         handleScroll () {
+            console.log('scroll')
             const top = document.documentElement.scrollTop
-            console.log(top)
             if (top > 60) {
                 let opacity = top / 140;
                 opacity = opacity > 1 ? 1 : opacity;
@@ -45,8 +45,12 @@ export default {
     },
     mounted () {
         window.addEventListener('scroll', this.handleScroll)
+    },
+    // 页面销毁要解除绑定
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll)
     }
-   
+
 }
 </script>
 
@@ -60,7 +64,6 @@ export default {
         line-height: .8rem;
         border-radius: .4rem;
         text-align: center;
-        
         background: rgba(0,0,0,.8);
     }
 
